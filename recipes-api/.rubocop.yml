@@ -1,0 +1,7 @@
+require:
+  - rubocop-performance
+
+AllCops:
+  Exclude:
+    - bin/**/*
+  TargetRubyVersion: 2.6

@@ -6,8 +6,8 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 ruby '2.6.5'
 
-gem 'puma', '~> 4.2'
 gem 'grape', '~> 1.2'
+gem 'puma', '~> 4.2'
 
 group :test, :development do
   gem 'rubocop', '~> 0.76.0'

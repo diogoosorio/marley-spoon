@@ -46,6 +46,19 @@ class Api < Grape::API
         .list_recipes(skip: params[:skip], limit: params[:limit])
         .to_h
     end
+
+    params do
+      requires :id, type: String
+    end
+    route_param :id do
+      get do
+        recipe = recipes_gateway.get_recipe(id: params[:id])&.to_h
+
+        return error!(Errors.not_found, 404) if recipe.nil?
+
+        recipe
+      end
+    end
   end
 
   route :any, '*path' do

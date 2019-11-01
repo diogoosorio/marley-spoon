@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cdn.contentful.com/spaces/kk2bw5ojx476/environments/master/entries?content_type=recipe&include=1&select=fields.title,fields.description,fields.photo,fields.chef,fields.tags,sys&sys.id=437eO3ORCME46i02SeCW46
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      X-Contentful-User-Agent:
+      - sdk contentful.rb/2.14.0; platform ruby/2.6.5; os Linux;
+      Authorization:
+      - "<ACCESS_TOKEN>"
+      Content-Type:
+      - application/vnd.contentful.delivery.v1+json
+      Accept-Encoding:
+      - gzip
+      Connection:
+      - close
+      Host:
+      - cdn.contentful.com
+      User-Agent:
+      - http.rb/4.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Accept-Language,Authorization,Cache-Control,Content-Length,Content-Range,Content-Type,DNT,Destination,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Http-Method-Override,X-Mx-ReqToken,X-Requested-With,X-Contentful-Version,X-Contentful-Content-Type,X-Contentful-Organization,X-Contentful-Skip-Transformation,X-Contentful-User-Agent,X-Contentful-Enable-Alpha-Feature
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Etag
+      Access-Control-Max-Age:
+      - '86400'
+      Cf-Environment-Id:
+      - master
+      Cf-Environment-Uuid:
+      - 3e111988-d2b3-4647-a0a8-ed1215cbd839
+      Cf-Organization-Id:
+      - 0OxgeKaTWSWzTukWE0scEe
+      Cf-Space-Id:
+      - kk2bw5ojx476
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/vnd.contentful.delivery.v1+json
+      Contentful-Api:
+      - cda_cached
+      Etag:
+      - W/"15138311920023873626"
+      Server:
+      - Contentful
+      X-Content-Type-Options:
+      - nosniff
+      X-Contentful-Region:
+      - us-east-1
+      Content-Length:
+      - '1277'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Fri, 01 Nov 2019 13:23:04 GMT
+      Via:
+      - 1.1 varnish
+      Age:
+      - '1777'
+      Connection:
+      - close
+      X-Served-By:
+      - cache-mad22033-MAD
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '1'
+      Vary:
+      - Accept-Encoding
+      X-Contentful-Request-Id:
+      - cf335d53-7dd0-4988-b0ba-80877c55356e
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA+1Y32/bNhB+z1/B6mFPiSzJ+mW/ZV7WdWuapk4QYFtR0NRJZiyTikg7dYr876Mo25EUWTawYGiK8cEwJfLuu9N9d0d+O0LIECthDNE39VdN5CoDNTNO8xyvDPXs8bhYI7nEqXpu65mY0UxNLD1J6ZzK4pVVzqmEeSHwLy2wFKuWxRTS6ElRqYzKVGsb5VRkKzSaUjIDhjCL0CdK4G95T+UUfQQs0E/oNF8kixSjMU5xZBS6y2FEIEhOM0k5qwgja2EKLDtGElgEOZoDlsdafk7JVD3mcyw5rJDACwIo5vkcYXRPGaMsQTKnMRCJEY9RBCkllC8EogzJKRWIMzjJuESTHFMBJroBJDLOGaIS8aVSplSA1pUVBkiOBMcztMgQqLcrlGIhUZTzrBCfcB4xEKIEJyBfqq1IYpasEF4bLgrDEU45SwSNNFq1ZkkVAKZgcK7kKVFxipfFG6WY8JTnJvpF2aPwKMxacPQGjTifHaMcUvy11Ajslq/eVL2aTbnk28BYu7oaK1v/b2LmPWWzigT9iVP17GoTU0KAbC6gUfHNvPmvqyv+sBzz1Zl1fidAGRP6RfxtxuP2v47IchhkCvGLYjxjMl+1Y/ywEm9/DvmE4Mub+Z2FL/272Wg/RImTJzqUsDekWBvR5tQKFVvc2nBsG2i1pHStb79PltzPH67fJe/eJuTi9Dy5DKu4Fcmrjn5y7xN9/xOkyXU8TZ0wijFc+/fkZnwnrLsOoFvQn9f/tpFRy2kFdkNkmBSppur6Z6v0ykOjeawlVp21dfls5kzuPX771Q0OiOHyM7n9AC76F59G52euTy1nDKMb168ScgOs+bUNkqusBtFpkYUNx7LDE8s7sYIruz/sO0PLNb1B/8+qpEUW7dzgD13bDFy7tgHYkuaczYEVOvb7sDRprhIc5E0XHerfs4rOvXkghyUVZf7vV9MDZyrxy3UC2o/7UGyjitzWCMiBUFVI9+JOOcFlCQR2cj3ebCj5WPx+1jWWMpIuVJnbOt8og2BTZatEbYnq1ugvSFGp/CXD9zGgkXjaOLCXBR3ppjtlVT29pWmTDUp9Bx+cYOh4Zuh61fBWWzoYsWvLbk7s9mwHL9Smjuhr+H0HN7o8W2GIbuI2wyA7ObLbjsOR7mbKNk5UgexI8jWsO+iy7lJLk9o6TaWL4bluNZN0oVICinOo0HNT/7YF5ClVtJDktdGpvXF5CTYNhlbf9Gz3UDa5Q1ttcUwvsBpbXi+bnO+LTbojrvC7Kye8AJ1+50yf25aqOG21/th0am9TX4JO/tDrm+EzbnQXJys0g6DJwP/phIz956bvrjhNAadyqu9dyrFlkn6im0FVy071QfoHbf52XAW08qt0RD0BdxyG7KHrmZ5VO9t0N3/9HVteL7/qzd+/qAByc3k3/uPadoMB+g1yjqwgOAnsKMRWEMchBAM8IRMLfGLBJLbi/sQfkNqJULVr+gDUuBNZ5MV1o9Hr0TlOQJhExriIemEykL3qAbvXHjC9eBKGsdu3HBJHdui6Awc8NyQR2DZ2PM/rrXF/KXB/OQS3eZslzdNsBBLTtH6vue5DBX0oDHP6luWH1RjVHNZ2PbNbv7qnkZyqV7bl6CvV+jCmQJNpQX8/tBpvq/c4taZYyy08/WHdBr+I8fWjQ2lS7zaDWj//hKmRzBT2x6PHo38A1edSCoQWAAA=
+    http_version: 
+  recorded_at: Fri, 01 Nov 2019 13:23:04 GMT
+recorded_with: VCR 5.0.0

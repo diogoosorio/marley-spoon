@@ -197,7 +197,79 @@ RSpec.describe Api do
     end
   end
 
+  describe 'GET /v1/recipes/:id' do
+    it 'returns a 200 status code', :vcr do
+      get "/api/v1/recipes/#{recorded_recipe.[](:id)}"
+
+      expect(last_response.status).to eq(200)
+    end
+
+    it 'returns the expected recipe', :vcr do
+      get "/api/v1/recipes/#{recorded_recipe.[](:id)}"
+
+      expect(last_response_body).to eq(recorded_recipe)
+    end
+
+    describe "when the recipe doesn't exist" do
+      it 'returns a 404 status code', :vcr do
+        get '/api/v1/recipes/invalid-id'
+
+        expect(last_response.status).to eq(404)
+      end
+
+      it 'returns the expected error body', :vcr do
+        get '/api/v1/recipes/invalid-id'
+
+        expect(last_response_body).to eq(
+          code: '10001',
+          message: 'Not found'
+        )
+      end
+    end
+
+    context 'when the Contentful API request fails' do
+      before(:each) do
+        stub_request(:get, /contentful/)
+          .to_return(status: [500, 'Internal Server Error'])
+      end
+
+      it 'returns a 503 status code' do
+        get "/api/v1/recipes/#{recorded_recipe.[](:id)}"
+
+        expect(last_response.status).to eq(503)
+      end
+
+      it 'returns the expected error body' do
+        get "/api/v1/recipes/#{recorded_recipe.[](:id)}"
+
+        expect(last_response_body).to eq(
+          code: '10004',
+          message: 'Service unavailable'
+        )
+      end
+    end
+  end
+
   def last_response_body
     JSON.parse(last_response.body, symbolize_names: true)
   end
+
+  # rubocop:disable Metrics/MethodLength
+  def recorded_recipe
+    {
+      id: '437eO3ORCME46i02SeCW46',
+      title: "Crispy Chicken and Rice\twith Peas & Arugula Salad",
+      description: 'Crispy chicken skin, tender meat, and rich, tomatoey sauc' \
+      'e form a winning trifecta of delicious in this one-pot braise. We spoo' \
+      'n it over rice and peas to soak up every last drop of goodness, and se' \
+      'rve a tangy arugula salad alongside for a vibrant boost of flavor and ' \
+      'color. Dinner is served! Cook, relax, and enjoy!',
+      chef_name: 'Jony Chives',
+      photo_url: '//images.ctfassets.net/kk2bw5ojx476/5mFyTozvSoyE0Mqse' \
+      'oos86/fb88f4302cfd184492e548cde11a2555/SKU1479_Hero_077-' \
+      '71d8a07ff8e79abcb0e6c0ebf0f3b69c.jpg',
+      tag_names: ['gluten free', 'healthy']
+    }.freeze
+  end
+  # rubocop:enable Metrics/MethodLength
 end

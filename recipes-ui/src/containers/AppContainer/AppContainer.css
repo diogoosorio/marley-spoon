@@ -1,1 +1,29 @@
-@import '~antd/dist/antd.css'
+@import '~antd/dist/antd.css';
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.app {
+  padding: 0 15px;
+  margin: 20px auto;
+}
+
+@media (min-width: 768px) {
+  .app {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .app {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app {
+    width: 1170px;
+  }
+}

@@ -8,3 +8,11 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - web/api.rb
+    - spec/**/*
+
+Metrics/AbcSize:
+  Enabled: false

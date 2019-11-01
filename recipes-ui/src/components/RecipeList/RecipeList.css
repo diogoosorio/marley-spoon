@@ -1,0 +1,9 @@
+.recipe-list {
+  margin-top: 40px;
+}
+
+.recipe-list__pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}

@@ -8,6 +8,8 @@ import {
 import Routes from '../../constants/routes';
 import './AppContainer.css';
 
+import RecipeListContainer from '../RecipeListContainer'
+
 const AppContainer = () => (
   <div className="app">
     <Router>
@@ -16,9 +18,7 @@ const AppContainer = () => (
           <Redirect to={Routes.RECIPE_LIST} />
         </Route>
 
-        <Route path={Routes.RECIPE_LIST} exact>
-          <h1>Recipe List</h1>
-        </Route>
+        <Route path={Routes.RECIPE_LIST} component={RecipeListContainer} exact />
 
         <Route path={Routes.RECIPE_DETAIL} exact>
           <h1>Recipe Detail</h1>

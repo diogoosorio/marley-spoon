@@ -1,0 +1,9 @@
+.recipe-list-item {
+  margin-top: 20px;
+}
+
+.recipe-list-item__image {
+  max-height: 400px;
+  object-fit: cover;
+  overflow: hidden;
+}

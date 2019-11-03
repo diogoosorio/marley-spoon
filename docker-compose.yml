@@ -10,3 +10,11 @@ services:
         REACT_APP_DEFAULT_PAGE_SIZE: 2
     ports:
       - 3000:80
+
+  recipes-api:
+    build:
+      context: ./recipes-api
+    environment:
+      CONTENTFUL_ACCESS_TOKEN:
+    ports:
+      - 3001:3001

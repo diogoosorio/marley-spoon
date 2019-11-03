@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  recipes-ui:
+    build:
+      context: ./recipes-ui
+      args:
+        REACT_APP_API_BASE_URL: http://localhost:3001/api/v1
+        REACT_APP_API_TIMEOUT: 2000
+        REACT_APP_DEFAULT_PAGE_SIZE: 2
+    ports:
+      - 3000:80

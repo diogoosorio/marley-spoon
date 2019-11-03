@@ -1,0 +1,33 @@
+---
+matrix:
+  include:
+    -
+      language: ruby
+      cache: bundler
+      sudo: false
+      dist: trusty
+      rvm:
+        - 2.6.5
+      before_script:
+        - gem install bundler:2.0.2
+        - cd recipes-api
+        - bundle install
+      script:
+        - bundle exec rubocop
+        - bundle exec rspec
+
+    -
+      language: node_js
+      sudo: false
+      dist: trusty
+      node_js:
+        - stable
+      cache:
+        directories:
+          - node_modules
+      before_script:
+        - cd recipes-ui
+        - yarn
+      script:
+        - yarn lint
+        - yarn test

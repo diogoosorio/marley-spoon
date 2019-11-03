@@ -1,0 +1,12 @@
+.recipe-detail__image {
+  margin: 20px auto;
+}
+
+.recipe-detail__image img {
+  margin: 0 auto;
+  display: block;
+}
+
+.recipe-detail__description {
+  margin: 20px 0;
+}

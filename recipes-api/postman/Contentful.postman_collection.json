@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "59afc2d9-4dee-4784-8499-c488c34b9ef2",
+		"name": "Contentful",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET: /content_types",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{CONTENTFUL_ACCESS_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cdn.contentful.com/spaces/kk2bw5ojx476/environments/master/content_types",
+					"protocol": "https",
+					"host": [
+						"cdn",
+						"contentful",
+						"com"
+					],
+					"path": [
+						"spaces",
+						"kk2bw5ojx476",
+						"environments",
+						"master",
+						"content_types"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /content_types/recipe",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{CONTENTFUL_ACCESS_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cdn.contentful.com/spaces/kk2bw5ojx476/environments/master/content_types/recipe",
+					"protocol": "https",
+					"host": [
+						"cdn",
+						"contentful",
+						"com"
+					],
+					"path": [
+						"spaces",
+						"kk2bw5ojx476",
+						"environments",
+						"master",
+						"content_types",
+						"recipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET: /entries?content_type=recipe",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{CONTENTFUL_ACCESS_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://cdn.contentful.com:443/spaces/kk2bw5ojx476/environments/master/entries?content_type=recipe&select=sys.id,fields.title,fields.photo,fields.chef,fields.tags,fields.description&include=1&skip=0&limit=10",
+					"protocol": "https",
+					"host": [
+						"cdn",
+						"contentful",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"spaces",
+						"kk2bw5ojx476",
+						"environments",
+						"master",
+						"entries"
+					],
+					"query": [
+						{
+							"key": "content_type",
+							"value": "recipe"
+						},
+						{
+							"key": "select",
+							"value": "sys.id,fields.title,fields.photo,fields.chef,fields.tags,fields.description"
+						},
+						{
+							"key": "include",
+							"value": "1"
+						},
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
